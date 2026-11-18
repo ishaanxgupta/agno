@@ -1,5 +1,15 @@
 # Test Log
 
+### supermemory_tools.py
+
+**Status:** PASS
+
+**Description:** Ran the cookbook against the live Supermemory API with `gpt-5.6-luna`. Example 1 saves a fact with `add_memory`, waits for Supermemory to process it, then recalls it with `get_profile`. Example 2 reads the same profile with add and forget disabled. Example 3 recalls it through `aprint_response`, which runs the async tools.
+
+**Result:** All three examples answered from stored memory ("You live in New York City", "You work as a software engineer"). New memories took about a minute to become searchable with `dreaming="instant"`, which is why the cookbook waits before the recall step. `pytest libs/agno/tests/unit/tools/test_supermemory.py` passes (40 tests, mocked client).
+
+---
+
 ### sixtydb_tools.py
 
 **Status:** PASS (local HTTP and cookbook checks); live agent run pending
